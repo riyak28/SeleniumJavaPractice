@@ -3,7 +3,7 @@
 
     <test name="MyFirstTest">
         <classes>
-            <class name="TestNG"/>
+            <class name="org.example.testng.TestNG"/>
         </classes>
     </test>
 

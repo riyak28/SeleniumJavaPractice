@@ -1,3 +1,5 @@
+package org.example.testng;
+
 import org.testng.annotations.*;
 
 public class TestNG {

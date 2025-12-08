@@ -1,9 +1,9 @@
+package org.example.alertsframewindows;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -41,7 +41,7 @@ public class Alertclass {
 
     @Test
     public void confirmBox() {
-        messageValidation("accept", "You pressed OK12");
+         messageValidation("accept", "You pressed OK12");
         messageValidation("dismiss", "You pressed Cancel!");
     }
     public void messageValidation(String action, String message) {

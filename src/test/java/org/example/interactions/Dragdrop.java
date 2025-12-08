@@ -1,15 +1,13 @@
+package org.example.interactions;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class Dragdrop {
 
@@ -24,15 +22,14 @@ public class Dragdrop {
         //driver.findElement(By.xpath("//button[contains(text(),'Interaction')]")).click();
 
     }
+
     @AfterClass
     public void tearDown() {
         driver.close();
     }
 
     @Test
-    public void interaction()
-
-    {
+    public void droppable() {
         driver.findElement(By.xpath("//a[contains(text(),' Droppable')]")).click();
         WebElement drag = driver.findElement(By.id("draggable"));
         WebElement drop = driver.findElement(By.id("droppable"));
@@ -46,15 +43,16 @@ public class Dragdrop {
         }
 
     }
+
     @Test
-    public void draggable()
-    {
+    public void draggable() {
         driver.get("https://www.tutorialspoint.com/selenium/practice/dragabble.php");
-        WebElement drag= driver.findElement(By.xpath("//a[contains(text(),'Dragabble')]"));
-    drag.click();
-    Actions action=new Actions(driver);
-   // action.dragAndDropBy(drag,100,50).perform();
-    action.clickAndHold(drag).release().build().perform();
+        driver.findElement(By.xpath("//a[contains(text(),'Dragabble')]"));
+        WebElement drag = driver.findElement(By.id("draggables"));
+        drag.click();
+        Actions action = new Actions(driver);
+        action.moveToElement(drag).dragAndDropBy(drag, 500, 100).build().perform();
+        //  action.moveToElement()clickAndHold(drag).release().build().perform();
 
     }
-    }
+}
