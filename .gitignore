@@ -9,7 +9,6 @@ target/
 *.iml
 *.ipr
 screenshots/
-target/
 test-output/
 
 
